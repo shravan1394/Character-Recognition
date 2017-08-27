@@ -1,4 +1,6 @@
 #!/usr/bin/python
+
+# Converts the dataset into 20*20 images for training
 import scipy.io as sio
 import numpy as np
 import cv2
@@ -85,25 +87,12 @@ while 1:
 		value=np.array(value)		
 		sio.savemat('data.mat', {'X':data,'y':value})
 		break;
-		
-	
-	
-	
-	
-	
 
-	
-	
 	
 	if cv2.waitKey(3)==ord('q'):
 		break
     
-
-
-
-  
-    
-    
+   
      
 
 cv2.destroyAllWindows()

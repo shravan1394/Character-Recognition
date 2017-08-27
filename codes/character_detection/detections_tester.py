@@ -1,4 +1,6 @@
 #!/usr/bin/python
+
+# detection testing code for images
 from arrange import arrange
 import scipy.io as sio
 import numpy as np

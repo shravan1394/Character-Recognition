@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+# arranges the contours based on thiers proximity to top left corner of the page
 def arrange(contours,hierarchy):
 	import cv2
 	import numpy as np
