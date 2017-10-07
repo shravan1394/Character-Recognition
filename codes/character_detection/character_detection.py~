@@ -4,7 +4,11 @@ import cv2
 import os
 import numpy as np
 import scipy.io as sio
-
+os.chdir('..')
+os.chdir('character_recognition')
+from oct2py import octave
+os.chdir('..')
+os.chdir('character_detection')
 from arrange import arrange
 from matplotlib import pyplot as plt
 mat0 = sio.loadmat('weights/tr0.mat')
@@ -235,12 +239,9 @@ while(cap.isOpened()):
 	#cv2.imshow('ed',mas1)
 		#print np.shape(c)
 		c=c.reshape(u,r)
-		os.chdir('..')
-		os.chdir('character_recognition')
-		from oct2py import octave
+
 		p=octave.predict(Theta0,Theta1,Theta2,c);
-		os.chdir('..')
-		os.chdir('character_detection')
+
 
 		#print p
 		#for i in range(len(p)):

@@ -4,7 +4,7 @@ say "Show me something"
 while [ $a -lt 2 ]
 do
 	
-	python exp.py > example.txt
+	python2 character_detection/character_detection.py > example.txt
 	if grep -Fxq "1" example.txt
 	then 
 		say "You are shaking too much. Please show it again"

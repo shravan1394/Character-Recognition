@@ -4,7 +4,6 @@ import cv2
 import os
 import numpy as np
 import scipy.io as sio
-os.chdir('..')
 os.chdir('character_recognition')
 from oct2py import octave
 os.chdir('..')
