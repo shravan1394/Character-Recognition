@@ -22,3 +22,6 @@ paste the following in the command line <br />
 Download the Repo and go to the directory containing cmp.sh <br />
 run the script using the following command <br />
 `./cmp.sh` <br />
+
+## Video
+Link: https://www.youtube.com/watch?v=8dMps8Zx9fw
