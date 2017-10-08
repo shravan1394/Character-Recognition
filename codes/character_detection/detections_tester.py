@@ -5,13 +5,19 @@ from arrange import arrange
 import scipy.io as sio
 import numpy as np
 from matplotlib import pyplot as plt
+import os
+os.chdir('..')
+os.chdir('character_recognition')
 from oct2py import octave
+os.chdir('..')
+os.chdir('character_detection')
+
 import cv2
 word=[]
 ma=1
-mat0 = sio.loadmat('tr0.mat')
-mat1 = sio.loadmat('tr1.mat')
-mat2 = sio.loadmat('tr2.mat')
+mat0 = sio.loadmat('weights/tr0.mat')
+mat1 = sio.loadmat('weights/tr1.mat')
+mat2 = sio.loadmat('weights/tr2.mat')
 Theta0=mat0['Theta0']
 Theta1=mat1['Theta1']
 Theta2=mat2['Theta2']
@@ -24,7 +30,7 @@ cv2.createTrackbar('mi', 'edges',30,100,nothing)
 cv2.createTrackbar('th', 'edges',1,255,nothing)
 X=np.zeros((6,400))
 
-img=cv2.imread("2.jpg")
+
 ma=1
 f=1
 k=0
@@ -32,7 +38,7 @@ ind=np.arange(256).reshape(256,1)
 yt=0
 zt=0
 while 1:
-	img=cv2.imread("chk1.jpg")
+	img=cv2.imread("6.jpg")
 	ma = cv2.getTrackbarPos('ma','edges')
 	mi = cv2.getTrackbarPos('mi','edges')
 	th = cv2.getTrackbarPos('th','edges')
@@ -59,7 +65,7 @@ while 1:
 	ret,td = cv2.threshold(gray,himn-1.3*histd,255,cv2.THRESH_BINARY_INV)
          #   cv2.THRESH_BINARY_INV,(11),th)
 	
-	_,contours, hierarchy = cv2.findContours(td,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+	contours, hierarchy = cv2.findContours(td,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 	#contours1, hierarchy1 = cv2.findContours(th3,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 	#print hierarchy
 	
@@ -118,14 +124,14 @@ while 1:
 			#X[k,:]=l
 			#print k				
 			k=k+1
-	#print "".join(word)			
+	print "".join(word)			
 	#sio.savemat('R.mat', {'vect':X})
-	cv2.imshow('edges',edges)
-	#cv2.imshow('edges1',img)
+	#cv2.imshow('edges',edges)
+	cv2.imshow('edges',img)
 	#print k
 	#cv2.destroyAllWindows()
-	#cv2.waitKey(0)	
-	#break;
+	cv2.waitKey(0)	
+	break;
 	
 	
 	
