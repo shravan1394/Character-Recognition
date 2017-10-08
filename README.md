@@ -1,6 +1,10 @@
 # Character-Recognition
 Character recognition from live feed using OpenCV(python) and CNN(octave)
 
+## Dataset
+Fonts from Chars74K Dataset.<br />
+Link: http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/
+
 ## Dependencies
 
 Python2 <br />
